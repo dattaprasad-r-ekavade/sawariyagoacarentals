@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sawariya Car & Bike Rentals Goa | Explore Goa Your Way</title>
+  <meta name="description" content="Sawariya Car and Bike Rentals Goa — reliable cars and bikes near Mahadev Temple, Nerul, Bardez. Call +91 92702 26835." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sand: #f7f1e8;
+      --cream: #fffaf3;
+      --ink: #1a1f2e;
+      --ink-soft: #3d4556;
+      --teal: #0d7377;
+      --teal-dark: #095456;
+      --coral: #e07a5f;
+      --coral-hover: #c96a52;
+      --gold: #d4a373;
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(26, 31, 46, 0.12);
+      --radius: 16px;
+      --max: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ——— Nav ——— */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 1.5rem;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+
+    .nav.scrolled {
+      background: rgba(255, 250, 243, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(26, 31, 46, 0.08);
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      transition: color 0.3s;
+    }
+
+    .nav.scrolled .logo { color: var(--ink); }
+
+    .logo span { color: var(--coral); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      transition: color 0.2s;
+    }
+
+    .nav.scrolled .nav-links a { color: var(--ink-soft); }
+
+    .nav-links a:hover { color: var(--coral); }
+
+    .nav-cta {
+      background: var(--coral) !important;
+      color: var(--white) !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover { background: var(--coral-hover) !important; color: var(--white) !important; }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .nav.scrolled .menu-btn span { background: var(--ink); }
+
+    /* ——— Hero ——— */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 1.5rem 5rem;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(26, 31, 46, 0.45) 0%,
+        rgba(26, 31, 46, 0.25) 40%,
+        rgba(26, 31, 46, 0.75) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4ade80;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 16ch;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 36ch;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 8px 24px rgba(224, 122, 95, 0.4);
+    }
+
+    .btn-primary:hover { background: var(--coral-hover); }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.22); }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-teal:hover { background: var(--teal-dark); }
+
+    /* ——— Sections ——— */
+    section { padding: 5rem 1.5rem; }
+
+    .section-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--ink-soft);
+      max-width: 48ch;
+      font-size: 1.05rem;
+    }
+
+    /* ——— About ——— */
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      max-height: 520px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-float {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 250, 243, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .about-float strong {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--teal);
+      line-height: 1.2;
+    }
+
+    .about-float span {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .about-text p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .feature {
+      background: var(--sand);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--teal);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.65rem;
+      font-size: 1rem;
+    }
+
+    .feature h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .feature p {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* ——— Fleet ——— */
+    .fleet {
+      background: linear-gradient(165deg, #0d7377 0%, #0a4f52 55%, #1a1f2e 100%);
+      color: var(--white);
+    }
+
+    .fleet .section-label { color: var(--gold); }
+
+    .fleet .section-sub { color: rgba(255, 255, 255, 0.75); }
+
+    .fleet-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .fleet-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .fleet-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .fleet-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .fleet-card-img {
+      aspect-ratio: 16/11;
+      overflow: hidden;
+    }
+
+    .fleet-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .fleet-card:hover .fleet-card-img img { transform: scale(1.06); }
+
+    .fleet-card-body { padding: 1.35rem 1.4rem 1.5rem; }
+
+    .fleet-card-body h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .fleet-card-body p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+    }
+
+    .fleet-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ——— Why ——— */
+    .why { background: var(--sand); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.4rem;
+      box-shadow: 0 4px 20px rgba(26, 31, 46, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .why-num {
+      font-family: "Playfair Display", serif;
+      font-size: 1.75rem;
+      color: var(--coral);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .why-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    /* ——— Contact ——— */
+    .contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-card {
+      background: var(--sand);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid rgba(26, 31, 46, 0.08);
+    }
+
+    .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .contact-item:first-child { padding-top: 0; }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--teal);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item a,
+    .contact-item p {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .contact-item a:hover { color: var(--teal); }
+
+    .contact-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .map-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 360px;
+      height: 100%;
+      box-shadow: var(--shadow);
+      background: var(--sand);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border: 0;
+    }
+
+    .contact-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    /* ——— CTA band ——— */
+    .cta-band {
+      background: linear-gradient(120deg, var(--coral) 0%, #c45c42 100%);
+      color: white;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-band p {
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      max-width: 40ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-band .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ——— Footer ——— */
+    footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.65);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer a { color: var(--gold); }
+    footer a:hover { text-decoration: underline; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    /* ——— Mobile ——— */
+    @media (max-width: 900px) {
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        max-height: 400px;
+        aspect-ratio: 16/10;
+      }
+
+      .fleet-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-btn { display: flex; }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(280px, 85vw);
+        background: var(--cream);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 1.75rem 2rem;
+        gap: 1.25rem;
+        box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-links.open { transform: translateX(0); }
+
+      .nav-links a { color: var(--ink) !important; }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+      }
+
+      .features { grid-template-columns: 1fr; }
+
+      .why-grid { grid-template-columns: 1fr; }
+
+      .hero { padding-bottom: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">Sawariya <span>Goa</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="tel:+919270226835">Call now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="images/hero-goa.jpg"
+        alt="Scenic Goa beach coastline"
+        width="1920"
+        height="1080"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">Open for bookings · Nerul, Bardez</div>
+      <h1>Cars &amp; bikes to <em>explore Goa</em></h1>
+      <p class="hero-lead">
+        Sawariya Car and Bike Rentals — dependable rides near Mahadev Temple, Nerul. From beach hops to hinterland drives, we keep you moving.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+919270226835">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 92702 26835
+        </a>
+        <a class="btn btn-ghost" href="#fleet">View fleet</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-visual">
+        <img
+          src="images/about-car.jpg"
+          alt="Premium rental car on the road"
+          width="900"
+          height="1125"
+          loading="lazy"
+        />
+        <div class="about-float">
+          <div>
+            <strong>Nerul</strong>
+            <span>Bardez, North Goa</span>
+          </div>
+          <div>
+            <strong>Cars + Bikes</strong>
+            <span>Flexible rentals</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About us</span>
+        <h2 class="section-title">Your local ride partner in Goa</h2>
+        <p>
+          Whether you’re here for a weekend escape or a longer stay, Sawariya Car and Bike Rentals makes getting around simple. We’re based near Mahadev Temple in Nerul, Bardez — a convenient base for North Goa beaches, markets, and day trips.
+        </p>
+        <p>
+          Call or WhatsApp to check availability, pick your vehicle, and hit the road. Friendly service, clear communication, and rides ready when you are.
+        </p>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">🚗</div>
+            <h3>Cars for comfort</h3>
+            <p>Ideal for families, groups, and longer coastal drives.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">🏍</div>
+            <h3>Bikes for freedom</h3>
+            <p>Zip between beaches and cafés with ease.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">📍</div>
+            <h3>Easy location</h3>
+            <p>Near Mahadev Temple, H.No. 84, Nerul Bardez.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">☎</div>
+            <h3>Quick booking</h3>
+            <p>Call either number — we’ll help you book fast.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fleet" id="fleet">
+    <div class="section-inner">
+      <div class="fleet-header">
+        <div>
+          <span class="section-label">Fleet</span>
+          <h2 class="section-title">Ride what suits your trip</h2>
+          <p class="section-sub">Cars and bikes for every Goa itinerary. Ask us what’s available for your dates.</p>
+        </div>
+        <a class="btn btn-primary" href="tel:+918805124420">Book on call</a>
+      </div>
+      <div class="fleet-cards">
+        <article class="fleet-card">
+          <div class="fleet-card-img">
+            <img
+              src="images/fleet-car.jpg"
+              alt="Compact rental car"
+              width="800"
+              height="550"
+              loading="lazy"
+            />
+          </div>
+          <div class="fleet-card-body">
+            <span class="fleet-tag">Cars</span>
+            <h3>City &amp; coast cars</h3>
+            <p>Comfortable cars for beach hopping, shopping, and family outings across Goa.</p>
+            <a class="btn btn-ghost" href="tel:+919270226835">Enquire</a>
+          </div>
+        </article>
+        <article class="fleet-card">
+          <div class="fleet-card-img">
+            <img
+              src="images/fleet-bike.jpg"
+              alt="Motorcycle for rent"
+              width="800"
+              height="550"
+              loading="lazy"
+            />
+          </div>
+          <div class="fleet-card-body">
+            <span class="fleet-tag">Bikes</span>
+            <h3>Scooters &amp; bikes</h3>
+            <p>Light, agile two-wheelers perfect for short hops and scenic North Goa loops.</p>
+            <a class="btn btn-ghost" href="tel:+919270226835">Enquire</a>
+          </div>
+        </article>
+        <article class="fleet-card">
+          <div class="fleet-card-img">
+            <img
+              src="images/fleet-trip.jpg"
+              alt="Road trip adventure"
+              width="800"
+              height="550"
+              loading="lazy"
+            />
+          </div>
+          <div class="fleet-card-body">
+            <span class="fleet-tag">Trips</span>
+            <h3>Day-trip ready</h3>
+            <p>Heading south or inland? We’ll match you with a vehicle built for the journey.</p>
+            <a class="btn btn-ghost" href="tel:+918805124420">Enquire</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="section-inner">
+      <span class="section-label">Why Sawariya</span>
+      <h2 class="section-title">Simple rentals. Local trust.</h2>
+      <p class="section-sub">We focus on clear communication and getting you a reliable ride without the hassle.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <h3>Local base in Nerul</h3>
+          <p>Pick up near Mahadev Temple — well placed for Candolim, Calangute, and beyond.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <h3>Cars and bikes</h3>
+          <p>One place for four-wheelers and two-wheelers — choose what fits your plans.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <h3>Two phone lines</h3>
+          <p>Reach us on +91 92702 26835 or +91 88051 24420 for faster responses.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <h3>Easy to reach</h3>
+          <p>Email us or drop a pin — we’re on Google Maps for smooth navigation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Book your ride today</h2>
+      <p class="section-sub">Call, email, or find us in Nerul. We’re happy to help with availability and vehicle options.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h3>Phone</h3>
+              <div class="contact-phones">
+                <a href="tel:+919270226835">+91 92702 26835</a>
+                <a href="tel:+918805124420">+91 88051 24420</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:sawariya.goacarentals@gmail.com">sawariya.goacarentals@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3>Address</h3>
+              <p>Near Mahadev Temple, H.No. 84<br />Nerul, Bardez, Goa 403114</p>
+            </div>
+          </div>
+          <div class="contact-cta-row">
+            <a class="btn btn-primary" href="tel:+919270226835">Call primary</a>
+            <a class="btn btn-teal" href="https://wa.me/919270226835" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-ghost" style="background:transparent;color:var(--ink);border:1px solid rgba(26,31,46,0.2)" href="https://maps.google.com/maps?q=15.506216049194336%2C73.8008041381836&amp;z=17&amp;hl=en" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            title="Sawariya Car and Bike Rentals Goa location map"
+            src="https://maps.google.com/maps?q=15.506216049194336,73.8008041381836&amp;z=16&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Ready for the open road?</h2>
+    <p>Tell us your dates and whether you need a car or a bike — we’ll get you set for Goa.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-ghost" href="tel:+919270226835">+91 92702 26835</a>
+      <a class="btn btn-ghost" href="mailto:sawariya.goacarentals@gmail.com">Email us</a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Sawariya Car &amp; Bike Rentals Goa</strong>
+    Near Mahadev Temple, H.No. 84, Nerul Bardez, Goa 403114
+    <div class="footer-links">
+      <a href="tel:+919270226835">+91 92702 26835</a>
+      <a href="tel:+918805124420">+91 88051 24420</a>
+      <a href="mailto:sawariya.goacarentals@gmail.com">Email</a>
+      <a href="https://maps.google.com/maps?q=15.506216049194336%2C73.8008041381836&amp;z=17&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Maps</a>
+    </div>
+    <p>&copy; <span id="year"></span> Sawariya Goa Car Rentals. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const nav = document.getElementById("nav");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+  </script>
+</body>
+</html>
