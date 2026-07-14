@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dattaprasad-r-ekavade.github.io/sawariyagoacarentals/sitemap.xml
+Sitemap: https://sawariyagoacarentals.com/sitemap.xml
