@@ -49,6 +49,17 @@ document.documentElement.classList.add("js");
     });
   }
 
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+    a.addEventListener("click", function () {
+      var label = a.getAttribute("data-cta") || (a.textContent || "").trim();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "whatsapp_click", method: "whatsapp", event_label: label });
+      if (typeof gtag === "function") {
+        gtag("event", "generate_lead", { method: "whatsapp", event_label: label });
+      }
+    });
+  });
+
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
